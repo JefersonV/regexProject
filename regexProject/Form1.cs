@@ -418,7 +418,7 @@ namespace regexProject
         {
             if (regexNombre() == false)
             {
-                errorProvider1.SetError(txtName, "Debe cumplir con la expresión");
+                errorProvider1.SetError(txtName, "Nombre no válido, inicial mayúscula sin números ni símbolos");
             }
             else if (regexNombre() == true)
             {
@@ -430,7 +430,7 @@ namespace regexProject
         {
             if(regexDireccion() == false)
             {
-                errorProvider2.SetError(txtAddress, "Debe cumplir con las restricciones");
+                errorProvider2.SetError(txtAddress, "No debe contener simbolos y debe ser mayor de 10 caracteres y menor a 100");
             } else {
                 errorProvider2.SetError(txtAddress, "");
             }
@@ -451,7 +451,7 @@ namespace regexProject
         {
             if(regexPassword() == false)
             {
-                errorProvider4.SetError(txtpassword, "debe contener almenos una letra mayúscula, una minuscula, digitos y algun simbolo (entre 8 y 15 caracteres)");
+                errorProvider4.SetError(txtpassword, "Debe contener almenos una letra mayúscula, una minuscula, números y algun simbolo (entre 8 y 15 caracteres)");
 
             } // debe ter
             else
@@ -464,7 +464,7 @@ namespace regexProject
         {
             if(regexFecha() == false)
             {
-                errorProvider5.SetError(txtDate, " debe verificar entre rango de 01/01/2000 - 01-01-2021");
+                errorProvider5.SetError(txtDate, "Debe verificar entre rango de 01/01/2000 - 01-01-2021");
             }
             else
             {
@@ -472,11 +472,11 @@ namespace regexProject
             }
         }
 
-        private void txtSexo_TextChanged(object sender, EventArgs e)
+        private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            if(regexSexo() == false)
+            if (regexSexo() == false)
             {
-                errorProvider6.SetError(txtSexo, "Masculino o Femenino");
+                errorProvider6.SetError(txtSexo, "Elija");
             }
             else
             {
@@ -488,7 +488,7 @@ namespace regexProject
         {
             if(regexDpi() == false)
             {
-                errorProvider7.SetError(txtDpi, "DPI no válido (solo números), sin espacios, letras o simbolos");
+                errorProvider7.SetError(txtDpi, "Sólo se permiten números sin espacios, letras o símbolos (deben ser 13 dígitos)");
             }
             else
             {
@@ -500,7 +500,7 @@ namespace regexProject
         {
             if(regexNit() == false)
             {
-                errorProvider8.SetError(txtNit, "(solo números), sin simbolos ni espacios");
+                errorProvider8.SetError(txtNit, "Sólo se permiten números, sin espacioes, letras o símbolos (deben ser 8 dígitos)");
             }
             else
             {
@@ -512,7 +512,7 @@ namespace regexProject
         {
             if(regexCodigoPostal() == false)
             {
-                errorProvider9.SetError(txtCodigo, "Código postal no válido (Solo números), no mayor a 5 dígitos");
+                errorProvider9.SetError(txtCodigo, "Sólo se permiten números (deben ser 5 dígitos)");
             }
             else
             {
@@ -525,12 +525,50 @@ namespace regexProject
         {
             if(regexNumero() == false)
             {
-                errorProvider10.SetError(txtNumero, "La longitud debe ser de 8 solo dígitos");
+                errorProvider10.SetError(txtNumero, "Sólo se permiten números (deben ser 8 dígitos)");
             }
             else
             {
                 errorProvider10.SetError(txtNumero, "");
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbxPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if(chbxPassword.Checked == true)
+            {
+                txtpassword.UseSystemPasswordChar = false;
+                //txtpassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtpassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        /*
+         private void chB_contrasena_CheckedChanged(object sender, EventArgs e)
+ {
+ if (chB_contrasena.Checked == true)
+ {
+ if (txt_contrasena.PasswordChar == '*')
+ {
+ txt_contrasena.PasswordChar = '\0';
+ }
+ }
+ else
+ {
+ txt_contrasena.PasswordChar = '*';
+xxvii
+ }
+ }
+
+         */
     }
 }

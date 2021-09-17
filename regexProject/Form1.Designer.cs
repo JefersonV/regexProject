@@ -35,7 +35,6 @@ namespace regexProject
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtDpi = new System.Windows.Forms.TextBox();
             this.txtNit = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -63,6 +62,8 @@ namespace regexProject
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtSexo = new System.Windows.Forms.ComboBox();
+            this.chbxPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -124,15 +125,6 @@ namespace regexProject
             this.txtpassword.TabIndex = 1;
             this.txtpassword.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
             this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.ForeColor = System.Drawing.Color.Black;
-            this.txtSexo.Location = new System.Drawing.Point(377, 353);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(292, 22);
-            this.txtSexo.TabIndex = 1;
-            this.txtSexo.TextChanged += new System.EventHandler(this.txtSexo_TextChanged);
             // 
             // txtDpi
             // 
@@ -223,7 +215,7 @@ namespace regexProject
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(377, 334);
+            this.label5.Location = new System.Drawing.Point(377, 364);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 3;
@@ -277,7 +269,7 @@ namespace regexProject
             // txtDate
             // 
             this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDate.Location = new System.Drawing.Point(374, 279);
+            this.txtDate.Location = new System.Drawing.Point(374, 309);
             this.txtDate.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
             this.txtDate.MinDate = new System.DateTime(1999, 1, 1, 0, 0, 0, 0);
             this.txtDate.Name = "txtDate";
@@ -291,7 +283,7 @@ namespace regexProject
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(374, 251);
+            this.label10.Location = new System.Drawing.Point(374, 281);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 16);
             this.label10.TabIndex = 5;
@@ -336,12 +328,38 @@ namespace regexProject
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(597, 251);
+            this.linkLabel1.Location = new System.Drawing.Point(597, 281);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(68, 16);
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "dd/mm/yy";
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.FormattingEnabled = true;
+            this.txtSexo.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtSexo.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.txtSexo.Location = new System.Drawing.Point(374, 393);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(295, 24);
+            this.txtSexo.TabIndex = 7;
+            this.txtSexo.Text = "Elija una opción";
+            this.txtSexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.txtSexo.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            // 
+            // chbxPassword
+            // 
+            this.chbxPassword.AutoSize = true;
+            this.chbxPassword.Location = new System.Drawing.Point(374, 243);
+            this.chbxPassword.Name = "chbxPassword";
+            this.chbxPassword.Size = new System.Drawing.Size(145, 20);
+            this.chbxPassword.TabIndex = 8;
+            this.chbxPassword.Text = "Mostrar contraseña";
+            this.chbxPassword.UseVisualStyleBackColor = true;
+            this.chbxPassword.CheckedChanged += new System.EventHandler(this.chbxPassword_CheckedChanged);
             // 
             // Form1
             // 
@@ -349,6 +367,8 @@ namespace regexProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1119, 582);
+            this.Controls.Add(this.chbxPassword);
+            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDate);
@@ -366,7 +386,6 @@ namespace regexProject
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtNit);
             this.Controls.Add(this.txtDpi);
-            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtAddress);
@@ -399,7 +418,6 @@ namespace regexProject
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtpassword;
-        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.TextBox txtDpi;
         private System.Windows.Forms.TextBox txtNit;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -427,6 +445,8 @@ namespace regexProject
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.ErrorProvider errorProvider10;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ComboBox txtSexo;
+        private System.Windows.Forms.CheckBox chbxPassword;
     }
 }
 
