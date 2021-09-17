@@ -30,6 +30,7 @@ namespace regexProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -64,6 +65,13 @@ namespace regexProject
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtSexo = new System.Windows.Forms.ComboBox();
             this.chbxPassword = new System.Windows.Forms.CheckBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -74,15 +82,21 @@ namespace regexProject
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 582);
+            this.panel1.Size = new System.Drawing.Size(323, 549);
             this.panel1.TabIndex = 0;
             // 
             // txtName
@@ -215,7 +229,7 @@ namespace regexProject
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(377, 364);
+            this.label5.Location = new System.Drawing.Point(377, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 16);
             this.label5.TabIndex = 3;
@@ -342,7 +356,7 @@ namespace regexProject
             this.txtSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.txtSexo.Location = new System.Drawing.Point(374, 393);
+            this.txtSexo.Location = new System.Drawing.Point(374, 383);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(295, 24);
             this.txtSexo.TabIndex = 7;
@@ -361,12 +375,78 @@ namespace regexProject
             this.chbxPassword.UseVisualStyleBackColor = true;
             this.chbxPassword.CheckedChanged += new System.EventHandler(this.chbxPassword_CheckedChanged);
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(1013, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(94, 31);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Salir";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(31, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(3, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(176, 30);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Fase 1 Proyecto";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(3, 254);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(122, 30);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Autómatas";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(12, 338);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(290, 26);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Jeferson Jacob Velásquez Cululén";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(13, 372);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(134, 26);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "2290-18-21484";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1119, 582);
+            this.ClientSize = new System.Drawing.Size(1119, 549);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.chbxPassword);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.linkLabel1);
@@ -393,9 +473,10 @@ namespace regexProject
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
@@ -406,6 +487,7 @@ namespace regexProject
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,6 +529,12 @@ namespace regexProject
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ComboBox txtSexo;
         private System.Windows.Forms.CheckBox chbxPassword;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 

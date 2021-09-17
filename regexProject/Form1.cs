@@ -68,13 +68,13 @@ namespace regexProject
 
 
      
-
+        //Inicialización de estado de contraseña
         private void txtpassword_Enter(object sender, EventArgs e)
         {
             txtpassword.UseSystemPasswordChar = true;
         }
 
-        // REGEX para los campos
+        // -> Funciones Regex
         private bool regexNombre()
         {
             Regex er = new Regex("^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[ ]*)+$");
@@ -145,10 +145,7 @@ namespace regexProject
         private bool regexFecha()
         {
             Regex er = new Regex("([1-9]|[1-2][0-9]|[3][0-1])[-/]([0][1-9]|[1][0-2])[-/]([2][0][0][0-9]|[2][0][1][0 - 9]|[2][0][2][0-9])");
-            // ("[2][0][0][0-9]|")
-            //dd/mm/yy
-            //18/07/2007
-            //("^([L|l]{1}[asculino]{8})|([F|f]{1}[emenino]{7})$")
+   
             bool ok = false;
             if (er.IsMatch(txtDate.Text))
             {
@@ -195,8 +192,6 @@ namespace regexProject
         {
             bool ok = false;
             Regex er = new Regex("^[0-9]{13}$");
-            //Regex er = new Regex("^([0-9]{13})$");
-            //Regex er = new Regex("^([0-9]{8})$");
             if (er.IsMatch(txtDpi.Text))
             {
                 ok = true;
@@ -241,28 +236,10 @@ namespace regexProject
             return ok;
         }
 
-       
-
-
-        //Correo: ^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$
-         //contraseña ^(?=.{8,15}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*).*$
-         //Rango de faceha ([0][1-9]|[1-2][0-9]|[3][0-1])[-/]([0][1-9]|[1][0-2])[-/]([2][0][0][0-9]|[2] [0] [1] [0-9])
-         //Género ^([M|m]{1}[asculino]{8})|([F|f]{1}[emenino]{7})$
-         //DPI ^[0-9]{13}$
-         //Nit ^([0-9]{8})$|^([0-9]{8}[A-Z]{1})$
-         //Código Postal ^([0-2][0-9][0][0-9][0-9])$
-         //Número Telefónico ^([0-9]{7})$ , ^([0-9]{8})$
-        private void eliminarMessageError ()
-        {
-            errorProvider1.SetError(txtName, "");
-
-        }
-
-        //Botón para validar
+        // -> Botón validar
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            borrarMensajeError();
-
+            // Mensajes en caso de que no se cumpla alguna expresión
             if (regexNombre() == false)
             {
             MessageBox.Show("Nombre no válido, inicial mayúscula sin números y sin simbolos verificar!",
@@ -318,7 +295,7 @@ namespace regexProject
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            if(validarCampos() && regexNombre() && regexDireccion() && regexPassword() 
+            if(regexNombre() && regexDireccion() && regexPassword() 
                && regexFecha() && regexSexo() && regexDpi() && regexNit() && regexCodigoPostal()
                && regexNumero() == true)
             {
@@ -334,86 +311,13 @@ namespace regexProject
         }
 
 
-        //Función borrar Mensaje de error
-        private void borrarMensajeError()
-        {
-            errorProvider1.SetError(txtName, "");
-            errorProvider2.SetError(txtAddress, "");
-            errorProvider3.SetError(txtEmail, "");
-            errorProvider4.SetError(txtpassword, "");
-            errorProvider5.SetError(txtDate, "");
-            errorProvider6.SetError(txtSexo, "");
-            errorProvider7.SetError(txtDpi, "");
-            errorProvider8.SetError(txtNit, "");
-            errorProvider9.SetError(txtCodigo, "");
-            errorProvider9.SetError(txtNumero, "");
-        }
-
-        //Función validar campos
-        private bool validarCampos()
-        {
-            bool ok = true;
-            if (txtName.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtName, "Campo en blanco, Ingresar!");
-            }
-            if (txtAddress.Text == "")
-            {
-                ok = false;
-                errorProvider2.SetError(txtAddress, "Campo en blanco, Ingresar!");
-            }
-            if (txtEmail.Text == "")
-            {
-                ok = false;
-                errorProvider3.SetError(txtEmail, "Campo en blanco, Ingresar!");
-            }
-            if (txtpassword.Text == "")
-            {
-                ok = false;
-                errorProvider4.SetError(txtpassword, "Campo en blanco, Ingresar!");
-            }
-            if (txtDate.Text == "")
-            {
-                ok = false;
-                errorProvider5.SetError(txtDate, "Campo en blanco, Ingresar!");
-            }
-
-            if (txtSexo.Text == "")
-            {
-                ok = false;
-                errorProvider6.SetError(txtSexo, "Campo en blanco, Ingresar!");
-            }
-            if (txtDpi.Text == "")
-            {
-                ok = false;
-                errorProvider7.SetError(txtDpi, "Campo en blanco, Ingresar!");
-            }
-            if (txtNit.Text == "")
-            {
-                ok = false;
-                errorProvider8.SetError(txtNit, "Campo en blanco, Ingresar!");
-            }
-            if (txtCodigo.Text == "")
-            {
-                ok = false;
-                errorProvider9.SetError(txtCodigo, "Campo en blanco, Ingresar!");
-            }
-
-            if (txtNumero.Text == "")
-            {
-                ok = false;
-                errorProvider9.SetError(txtNumero, "Campo en blanco, Ingresar!");
-            }
-            return ok;
-        }
-
-
+   
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
+        // -> Validaciones
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             if (regexNombre() == false)
@@ -422,6 +326,7 @@ namespace regexProject
             }
             else if (regexNombre() == true)
             {
+                //Borra el mensaje de error cuando haya cumplido con la expresión
                 errorProvider1.SetError(txtName, "");
             }
         }
@@ -538,6 +443,7 @@ namespace regexProject
 
         }
 
+        // Checkbox para la contraseña
         private void chbxPassword_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -552,23 +458,14 @@ namespace regexProject
             }
         }
 
-        /*
-         private void chB_contrasena_CheckedChanged(object sender, EventArgs e)
- {
- if (chB_contrasena.Checked == true)
- {
- if (txt_contrasena.PasswordChar == '*')
- {
- txt_contrasena.PasswordChar = '\0';
- }
- }
- else
- {
- txt_contrasena.PasswordChar = '*';
-xxvii
- }
- }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-         */
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
