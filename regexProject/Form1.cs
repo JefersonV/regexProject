@@ -18,56 +18,26 @@ namespace regexProject
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        
-
         private void txtName_Enter(object sender, EventArgs e)
         {
-            /*if (txtName.Text == "Nombre")
-            {
-                txtName.Text = "";
-                txtName.ForeColor = Color.Black;
-            }*/
         }
 
         private void txtName_Leave(object sender, EventArgs e)
         {
-            /*if (txtName.Text == "")
-            {
-                txtName.Text = "Nombre";
-                txtName.ForeColor = Color.Black;
-            }*/
         }
 
         private void txtAddress_Enter(object sender, EventArgs e)
         {
-            /*if (txtAddress.Text == "Direccion")
-            {
-                txtAddress.Text = "";
-                txtAddress.ForeColor = Color.Black;
-            }*/
         }
 
         private void txtAddress_Leave(object sender, EventArgs e)
-        {/*
-            if (txtAddress.Text == "")
-            {
-                txtAddress.Text = "Dirección";
-                txtAddress.ForeColor = Color.Black;
-            }*/
+        {
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
-
-     
         //Inicialización de estado de contraseña
         private void txtpassword_Enter(object sender, EventArgs e)
         {
