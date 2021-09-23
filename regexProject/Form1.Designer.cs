@@ -32,6 +32,11 @@ namespace regexProject
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -62,16 +67,11 @@ namespace regexProject
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtSexo = new System.Windows.Forms.ComboBox();
             this.chbxPassword = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -82,7 +82,6 @@ namespace regexProject
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,13 +98,68 @@ namespace regexProject
             this.panel1.Size = new System.Drawing.Size(323, 549);
             this.panel1.TabIndex = 0;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label15.Location = new System.Drawing.Point(3, 379);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(193, 26);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Carné: 2290-18-21484";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(3, 344);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(290, 26);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Jeferson Jacob Velásquez Cululén";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label13.Location = new System.Drawing.Point(3, 254);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(122, 30);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Autómatas";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label12.Location = new System.Drawing.Point(3, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(174, 30);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Proyecto Regex";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(31, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // txtName
             // 
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(374, 65);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(292, 22);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
@@ -127,7 +181,7 @@ namespace regexProject
             this.txtEmail.Location = new System.Drawing.Point(374, 165);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(292, 22);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 2;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtpassword
@@ -136,7 +190,7 @@ namespace regexProject
             this.txtpassword.Location = new System.Drawing.Point(374, 215);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(292, 22);
-            this.txtpassword.TabIndex = 1;
+            this.txtpassword.TabIndex = 3;
             this.txtpassword.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
             this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
             // 
@@ -146,7 +200,7 @@ namespace regexProject
             this.txtDpi.Location = new System.Drawing.Point(777, 65);
             this.txtDpi.Name = "txtDpi";
             this.txtDpi.Size = new System.Drawing.Size(292, 22);
-            this.txtDpi.TabIndex = 1;
+            this.txtDpi.TabIndex = 6;
             this.txtDpi.TextChanged += new System.EventHandler(this.txtDpi_TextChanged);
             // 
             // txtNit
@@ -155,7 +209,7 @@ namespace regexProject
             this.txtNit.Location = new System.Drawing.Point(777, 115);
             this.txtNit.Name = "txtNit";
             this.txtNit.Size = new System.Drawing.Size(292, 22);
-            this.txtNit.TabIndex = 1;
+            this.txtNit.TabIndex = 7;
             this.txtNit.TextChanged += new System.EventHandler(this.txtNit_TextChanged);
             // 
             // txtCodigo
@@ -164,7 +218,7 @@ namespace regexProject
             this.txtCodigo.Location = new System.Drawing.Point(777, 165);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(292, 22);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 8;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // txtNumero
@@ -173,7 +227,7 @@ namespace regexProject
             this.txtNumero.Location = new System.Drawing.Point(777, 226);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(292, 22);
-            this.txtNumero.TabIndex = 1;
+            this.txtNumero.TabIndex = 9;
             this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
             // btnValidate
@@ -181,7 +235,7 @@ namespace regexProject
             this.btnValidate.Location = new System.Drawing.Point(593, 466);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(176, 41);
-            this.btnValidate.TabIndex = 2;
+            this.btnValidate.TabIndex = 10;
             this.btnValidate.Text = "Validar";
             this.btnValidate.UseVisualStyleBackColor = true;
             this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
@@ -192,7 +246,7 @@ namespace regexProject
             this.label1.Location = new System.Drawing.Point(374, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 16);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 11;
             this.label1.Text = "Ingrese nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -202,7 +256,7 @@ namespace regexProject
             this.label2.Location = new System.Drawing.Point(374, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 16);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 12;
             this.label2.Text = "Ingrese dirección";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -212,7 +266,7 @@ namespace regexProject
             this.label3.Location = new System.Drawing.Point(374, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 13;
             this.label3.Text = "Ingrese Correo";
             this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -222,7 +276,7 @@ namespace regexProject
             this.label4.Location = new System.Drawing.Point(371, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 16);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 14;
             this.label4.Text = "Ingrese Contraseña";
             this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -232,7 +286,7 @@ namespace regexProject
             this.label5.Location = new System.Drawing.Point(377, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 16);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 17;
             this.label5.Text = "Sexo";
             this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -242,7 +296,7 @@ namespace regexProject
             this.label6.Location = new System.Drawing.Point(774, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
-            this.label6.TabIndex = 3;
+            this.label6.TabIndex = 20;
             this.label6.Text = "Ingrese DPI";
             this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -252,7 +306,7 @@ namespace regexProject
             this.label7.Location = new System.Drawing.Point(783, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 16);
-            this.label7.TabIndex = 3;
+            this.label7.TabIndex = 21;
             this.label7.Text = "Ingrese NIT";
             this.label7.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -262,7 +316,7 @@ namespace regexProject
             this.label8.Location = new System.Drawing.Point(783, 146);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 16);
-            this.label8.TabIndex = 3;
+            this.label8.TabIndex = 22;
             this.label8.Text = "Código postal";
             this.label8.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -272,7 +326,7 @@ namespace regexProject
             this.label9.Location = new System.Drawing.Point(783, 207);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 16);
-            this.label9.TabIndex = 3;
+            this.label9.TabIndex = 23;
             this.label9.Text = "Número de teléfono";
             this.label9.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -290,7 +344,7 @@ namespace regexProject
             this.txtDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDate.Size = new System.Drawing.Size(295, 22);
             this.txtDate.TabIndex = 4;
-            this.txtDate.Value = new System.DateTime(2021, 9, 17, 3, 58, 18, 0);
+            this.txtDate.Value = new System.DateTime(2021, 9, 19, 0, 0, 0, 0);
             this.txtDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             this.txtDate.TabIndexChanged += new System.EventHandler(this.txtDate_TabIndexChanged);
             // 
@@ -300,7 +354,7 @@ namespace regexProject
             this.label10.Location = new System.Drawing.Point(374, 281);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 16);
-            this.label10.TabIndex = 5;
+            this.label10.TabIndex = 16;
             this.label10.Text = "Fecha";
             // 
             // errorProvider2
@@ -339,16 +393,6 @@ namespace regexProject
             // 
             this.errorProvider10.ContainerControl = this;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(597, 281);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(68, 16);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "dd/mm/yy";
-            // 
             // txtSexo
             // 
             this.txtSexo.FormattingEnabled = true;
@@ -359,7 +403,7 @@ namespace regexProject
             this.txtSexo.Location = new System.Drawing.Point(374, 383);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(295, 24);
-            this.txtSexo.TabIndex = 7;
+            this.txtSexo.TabIndex = 5;
             this.txtSexo.Text = "Elija una opción";
             this.txtSexo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.txtSexo.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
@@ -370,7 +414,7 @@ namespace regexProject
             this.chbxPassword.Location = new System.Drawing.Point(374, 243);
             this.chbxPassword.Name = "chbxPassword";
             this.chbxPassword.Size = new System.Drawing.Size(145, 20);
-            this.chbxPassword.TabIndex = 8;
+            this.chbxPassword.TabIndex = 15;
             this.chbxPassword.Text = "Mostrar contraseña";
             this.chbxPassword.UseVisualStyleBackColor = true;
             this.chbxPassword.CheckedChanged += new System.EventHandler(this.chbxPassword_CheckedChanged);
@@ -380,65 +424,10 @@ namespace regexProject
             this.btnExit.Location = new System.Drawing.Point(1013, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(94, 31);
-            this.btnExit.TabIndex = 9;
+            this.btnExit.TabIndex = 19;
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(31, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(3, 300);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(176, 30);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Fase 1 Proyecto";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 12.94964F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(3, 254);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(122, 30);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Autómatas";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(12, 338);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(290, 26);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Jeferson Jacob Velásquez Cululén";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial Narrow", 10.8777F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(13, 372);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 26);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "2290-18-21484";
             // 
             // Form1
             // 
@@ -449,7 +438,6 @@ namespace regexProject
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.chbxPassword);
             this.Controls.Add(this.txtSexo);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label5);
@@ -477,6 +465,7 @@ namespace regexProject
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
@@ -487,7 +476,6 @@ namespace regexProject
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,7 +514,6 @@ namespace regexProject
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.ErrorProvider errorProvider10;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ComboBox txtSexo;
         private System.Windows.Forms.CheckBox chbxPassword;
         private System.Windows.Forms.Button btnExit;

@@ -239,59 +239,121 @@ namespace regexProject
         // -> Botón validar
         private void btnValidate_Click(object sender, EventArgs e)
         {
-            // Mensajes en caso de que no se cumpla alguna expresión
-            if (regexNombre() == false)
+
+            // En caso de que estén vacíos
+            if (txtName.Text == "" && txtAddress.Text == "" && txtEmail.Text == "" &&
+                txtpassword.Text == "" && txtDpi.Text == ""  && txtNit.Text == "" &&
+                txtCodigo.Text == "" && txtNumero.Text == "" && 
+                txtSexo.SelectedIndex == -1) 
+            {
+                MessageBox.Show("Los campos se encuentran vacíos", "Error",
+                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            // En caso de que algún campo este vacío
+
+            if(txtName.Text == "")
+            {
+                MessageBox.Show("El campo Nombre se encuentra vacío",
+               "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (regexNombre() == false)
             {
             MessageBox.Show("Nombre no válido, inicial mayúscula sin números y sin simbolos verificar!",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (regexDireccion() == false)
+
+            if(txtAddress.Text == "")
             {
-                MessageBox.Show("Dirección no válido, sin simbolos, mayor de 10 caracteres y menor a 100... verificar!",
+                MessageBox.Show("El campo Dirección se encuentra vacío",
+               "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (regexDireccion() == false)
+            {
+                MessageBox.Show("Dirección no válida, no debe llevar símbolos y debe ser mayor de 10 caracteres y menor a 100... verificar!",
                 "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (regexCorreo() == false)
+
+            if(txtEmail.Text == "")
+            {
+                MessageBox.Show("El campo Email se encuentra vacío",
+                "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+          
+            else if (regexCorreo() == false)
             {
                 MessageBox.Show("Correo electrónico no válido, debe tener un @ y un dominio... verificar!",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (regexPassword() == false)
+
+            if(txtpassword.Text == "")
             {
-                MessageBox.Show("Contraseña no válida, debe contener almenos una lestra mayúscula ,una minuscula, digitos y algun simbolo, mayor a 8 caracteres y menor a 15... verificar!",
+                MessageBox.Show("El campo Contraseña se encuentra vacío",
+                    "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (regexPassword() == false)
+            {
+                MessageBox.Show("Contraseña no válida, debe contener al menos una letra mayúscula ,una minuscula, números y algun simbolo, la longitud mayor a 8 caracteres y menor a 15... verificar!",
             
                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        
+
             if(regexFecha() == false)
             {
-                MessageBox.Show("Fecha no válida, debe verificar entre rango de 01/01/2000 - 01-01-2019... verificar!",
+                MessageBox.Show("Fecha no válida, debe verificar entre rango de 01/01/2000 - 01-01-2022... verificar!",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
             if (regexSexo() == false)
             {
-                MessageBox.Show("Género no válido, solo Masculino o Femenino... verificar!",
+                MessageBox.Show("Sexo no válido, seleccione Masculino o Femenino... verificar!",
                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (regexDpi() == false)
+
+            if(txtDpi.Text == "")
+            {
+                MessageBox.Show("El campo DPI se encuentra vacío",
+                    "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (regexDpi() == false)
             {
                 MessageBox.Show("DPI no válido (solo números), sin espacios, letras o simbolos... verificar!", 
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (regexNit() == false)
+
+            if(txtNit.Text == "")
             {
-                MessageBox.Show("Nit no válido (solo números), sin simmbolos ni espacios... verificar!", 
+                MessageBox.Show("El campo NIT se encuentra vacío",
+                    "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (regexNit() == false)
+            {
+                MessageBox.Show("Nit no válido (solo números), sin simbolos ni espacios... verificar!", 
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            if(regexCodigoPostal() == false)
+            if(txtCodigo.Text == "")
+            {
+                MessageBox.Show("El campo Código se encuentra vacío",
+                    "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(regexCodigoPostal() == false)
             {
                 MessageBox.Show("Código postal no válido (Solo números), no mayor a 5 dígitos", 
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
-            if(regexNumero() == false)
+
+            if(txtNumero.Text == "")
             {
-                MessageBox.Show("Número telefónico no válido (solo número), los números de caracteres según el país... verificar!",
+                MessageBox.Show("El campo Número se encuentra vacío",
+                    "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            else if(regexNumero() == false)
+            {
+                MessageBox.Show("Número debe ser de 8 dígitos, sin espacios... verificar!",
                     "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
@@ -299,7 +361,7 @@ namespace regexProject
                && regexFecha() && regexSexo() && regexDpi() && regexNit() && regexCodigoPostal()
                && regexNumero() == true)
             {
-                MessageBox.Show("Datos ingresado Correctamente", "Aceptación", 
+                MessageBox.Show("Datos ingresados Correctamente", "Aceptación", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -317,9 +379,10 @@ namespace regexProject
 
         }
 
-        // -> Validaciones
+        // -> Validaciones (evento textChanged y errorProvider)
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            
             if (regexNombre() == false)
             {
                 errorProvider1.SetError(txtName, "Nombre no válido, inicial mayúscula sin números ni símbolos");
@@ -333,6 +396,7 @@ namespace regexProject
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
         {
+            
             if(regexDireccion() == false)
             {
                 errorProvider2.SetError(txtAddress, "No debe contener simbolos y debe ser mayor de 10 caracteres y menor a 100");
@@ -369,7 +433,7 @@ namespace regexProject
         {
             if(regexFecha() == false)
             {
-                errorProvider5.SetError(txtDate, "Debe verificar entre rango de 01/01/2000 - 01-01-2021");
+                errorProvider5.SetError(txtDate, "Debe verificar entre rango de 01/01/2000 - 01-01-2023");
             }
             else
             {
@@ -381,7 +445,7 @@ namespace regexProject
         {
             if (regexSexo() == false)
             {
-                errorProvider6.SetError(txtSexo, "Elija");
+                errorProvider6.SetError(txtSexo, "Click en la pestaña para elegir una opción válida");
             }
             else
             {
@@ -405,7 +469,7 @@ namespace regexProject
         {
             if(regexNit() == false)
             {
-                errorProvider8.SetError(txtNit, "Sólo se permiten números, sin espacioes, letras o símbolos (deben ser 8 dígitos)");
+                errorProvider8.SetError(txtNit, "Sólo se permiten números, sin espacios, letras o símbolos (deben ser 8 dígitos)");
             }
             else
             {
