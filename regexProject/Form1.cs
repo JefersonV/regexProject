@@ -247,7 +247,7 @@ namespace regexProject
                 txtSexo.SelectedIndex == -1) 
             {
                 MessageBox.Show("Los campos se encuentran vacíos", "Error",
-                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                  MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -277,7 +277,7 @@ namespace regexProject
 
             if(txtEmail.Text == "")
             {
-                MessageBox.Show("El campo Email se encuentra vacío",
+                MessageBox.Show("El campo Correo se encuentra vacío",
                 "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
           
@@ -358,8 +358,8 @@ namespace regexProject
             }
 
             if(regexNombre() && regexDireccion() && regexPassword() 
-               && regexFecha() && regexSexo() && regexDpi() && regexNit() && regexCodigoPostal()
-               && regexNumero() == true)
+               && regexFecha() && regexSexo() && regexCorreo() && regexDpi() && regexNit()
+               && regexCodigoPostal() && regexNumero() == true)
             {
                 MessageBox.Show("Datos ingresados Correctamente", "Aceptación", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
